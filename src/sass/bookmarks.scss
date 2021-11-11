@@ -1,0 +1,19 @@
+.bookmarks {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(28.8rem, max-content));
+   grid-gap: 5rem;
+   justify-content: center;
+   padding: 5rem;
+
+   &__recommendation {
+      display: grid;
+      grid-gap: 3rem;
+      justify-items: center;
+      text-align: center;
+   }
+   
+   &__svg {
+      height: 30rem;
+      width: auto;
+   }
+}

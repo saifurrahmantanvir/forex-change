@@ -1,0 +1,24 @@
+.product__icon--delete,
+.product__icon--bookmark {
+   height: 100%;
+}
+
+.icon {
+   height: 2.2rem;
+   width: 2.2rem;
+
+   &__bookmark,
+   &__upload,
+   &__logout {
+      fill: currentColor;
+      margin-left: .5rem;
+   }
+}
+
+.arrow__icon--logo {
+   height: 3.2rem;
+   width: 3.2rem;
+   position: absolute;
+   top: -1rem;
+   left: -1.5rem;
+}

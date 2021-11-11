@@ -1,25 +1,53 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './app.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Navbar from './Navbar';
+import MainContent from './MainContent';
+import Sidebar from './Sidebar';
+import LoginForm from './Components/LoginForm';
+
+import { ThemeContextProvider } from './Components/ThemeContext';
+import { UserContextProvider } from './Components/UserContext';
+
+const AppWithUser = function () {
+   const [isLoggedIn, setIsLoggedIn] = React.useState('notLoggedIn');
+
+   if (isLoggedIn !== 'loggedIn') {
+      return (
+         <LoginForm
+            isLoggedIn={isLoggedIn}
+            setIsLoggedIn={setIsLoggedIn}
+         />
+      )
+   }
+
+   if (isLoggedIn === 'loggedIn') {
+      return (
+         <div className='app'>
+            <Router>
+               <Route render={(location, history) => (
+                  <React.Fragment>
+                     <ThemeContextProvider>
+                        <Navbar />
+                        <Sidebar location={location} history={history} />
+                        <MainContent />
+                     </ThemeContextProvider>
+                  </React.Fragment>
+               )}
+               />
+            </Router>
+         </div>
+      )
+   }
+}
+
+const App = function () {
+   return (
+      <UserContextProvider>
+         <AppWithUser />
+      </UserContextProvider>
+   )
 }
 
 export default App;

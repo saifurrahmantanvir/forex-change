@@ -1,0 +1,45 @@
+.upload {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(28.8rem, max-content));
+   grid-gap: 5rem;
+   justify-content: center;
+   padding: 5rem;
+
+   &__recommendation {
+      display: grid;
+      grid-gap: 2rem;
+      justify-items: center;
+      text-align: center;
+   }
+
+   &__description {
+      font-size: 1.7rem;
+      font-weight: 400;
+   }
+
+   &__product {
+      display: flex;
+      justify-content: center;
+   }
+
+   &__button {
+      display: flex;
+      font-size: 1.7rem;
+      border: none;
+      border-radius: 0.8rem;
+      padding: 1.2rem 2.2rem;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      &:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 0.8rem 1rem rgba(#000, 0.15);
+      }
+   }
+
+   &__svg {
+      height: 30rem;
+      width: auto;
+   }
+}

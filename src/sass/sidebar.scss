@@ -1,0 +1,33 @@
+.sidebar {
+   background-color: var(--color-sidebar);
+   min-height: calc(100vh - 6.2rem);
+}
+
+.nav {
+   margin-top: 3rem;
+   list-style: none;
+
+   &__item {
+      position: relative;
+
+      &:not(:last-of-type) {
+         margin-bottom: 1rem;
+      }
+   }
+   
+   &__link:link,
+   &__link:visited {
+      display: block;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      color: #fff;
+      transition: background-color 0.2s;
+   }
+
+   // &__item--active,
+   &__link:hover,
+   &__link:active {
+      background-color: rgba(#fff, 0.1);
+   }
+}

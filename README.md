@@ -1,3 +1,9 @@
+# forexChange Project
+
+After Day - 11 ---->
+
+Overall structure including design(not responsive yet), login, routing, bookmarking, uploading, toggling theme, pagination everything is working just fine.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

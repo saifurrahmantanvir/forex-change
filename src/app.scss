@@ -1,0 +1,16 @@
+.app {
+   display: grid;
+   grid-template-columns: minmax(min-content, 25rem) 1fr;
+
+   border: 1px solid #fff;
+}
+
+input,
+button {
+   font-family: inherit;
+}
+
+.main-content {
+   min-height: calc(100vh - 6.2rem);
+   background-color: var(--color-grey-dark);
+}
