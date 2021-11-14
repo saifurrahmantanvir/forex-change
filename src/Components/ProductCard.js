@@ -1,13 +1,14 @@
 import React from 'react'
 import '../sass/productCard.scss'
 
-import { useBookmarksContext } from './BookmarksContext';
-import { ProductIconBookmark, ProductIconBookmarkFill, ProductIconDelete } from '../icons/Icons';
-import { useTheme } from './ThemeContext';
+import { ProductIconBookmark, ProductIconBookmarkFill } from '../icons/Icons';
+
+import { useBookmarksContext } from './Contexts/BookmarksContext';
+import { useTheme } from './Contexts/ThemeContext';
 
 import productImg from '../img/product.png';
 
-const ProductCard = function ({ product, markable = true, deleteUpload = null }) {
+const ProductCard = function ({ product, markable = true, deleteUpload = null, toggleModal = null, setExchangeIDs = null }) {
    const [theme] = useTheme();
    const [marked, setMarked] = React.useState(product.marked);
    const [, setMarkedItems] = useBookmarksContext();
@@ -22,10 +23,19 @@ const ProductCard = function ({ product, markable = true, deleteUpload = null })
       setMarked(false);
    }
 
+   const productNameFormatter = (productName) => {
+      const nameLength = productName.length;
+      if (nameLength <= 13) {
+         return productName;
+      } else {
+         return productName.slice(0, 11).trim().padEnd(14, '...');
+      }
+   }
+
    return (
       <div className="product">
          <figure className="product__item">
-            <img src={product.productImage || productImg} alt='product 1' className='product__img' />
+            <img src={product.productImage || productImg} alt='' className='product__img' />
          </figure>
          {
             markable ? (
@@ -35,20 +45,34 @@ const ProductCard = function ({ product, markable = true, deleteUpload = null })
                         : <ProductIconBookmark fill={theme} />
                   }
                </button>
+            ) : null
+         }
+         <h3 className="product__name" style={{ color: theme }}>
+            {productNameFormatter(product.productName)}
+         </h3>
+         <span className="product__used">Used - {product.used}</span>
+         {
+            markable ? (
+               <button
+                  className="product__request"
+                  style={{ backgroundColor: theme }}
+                  onClick={() => {
+                     toggleModal();
+                     setExchangeIDs(pState => ({ ...pState, takenProductId: product.productId }));
+                  }}
+               >
+                  Request Exchange
+               </button>
             ) : (
-               <button className="product__delete" onClick={() => deleteUpload(product.productId)}>
-                  <ProductIconDelete fill={theme} />
+               <button
+                  className="product__delete"
+                  style={{ backgroundColor: theme }}
+                  onClick={() => deleteUpload(product.productId)}
+               >
+                  Delete Product
                </button>
             )
          }
-         <h3 className="product__name" style={{ color: theme }}>
-            {`${product.productName}`.slice(0, 11).trim().padEnd(14, '...')}
-         </h3>
-         <span className="product__used">Used - {product.used}</span>
-
-         <button className="product__request" style={{ backgroundColor: theme }}>
-            Request Exchange
-         </button>
       </div>
    )
 }

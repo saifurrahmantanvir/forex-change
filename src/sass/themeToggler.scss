@@ -1,0 +1,25 @@
+.theme {
+   display: flex;
+   align-items: center;
+
+   position: absolute;
+   bottom: 4rem;
+   right: 7rem;
+
+   font-weight: 400;
+
+   &__button {
+      border: none;
+      border-radius: 50%;
+      padding: 1rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+
+      &--active { padding: 1.5rem; }
+      &:focus { border: none; }
+
+      &--green { background-color: #276738; }
+      &--red { background-color: #ef233c; }
+      &--orange { background-color: #eb5e28; }
+   }
+}

@@ -1,16 +1,22 @@
 import React from 'react'
 import './sass/navbar.scss';
+
 import { Link } from 'react-router-dom';
 
 import { IconBookmark, IconUpload, IconLogout, ArrowIconLogo } from './icons/Icons';
-import { useTheme } from './Components/ThemeContext';
+import { useTheme } from './Components/Contexts/ThemeContext';
+import { useUserContext } from './Components/Contexts/UserContext';
 
 const Navbar = function () {
    const [theme] = useTheme();
+   const [user] = useUserContext();
+
+   const userNameI = user.owner.split(' ')[0];
+   const userNameF = userNameI.slice(0, 1).toUpperCase() + userNameI.slice(1).toLowerCase();
 
    return (
       <div className='navbar'>
-         <div className='logo'>
+         <div className='navbar__logo'>
             <ArrowIconLogo fill={theme} />
             forex<span style={{ color: theme }}>Change</span>
          </div>
@@ -28,7 +34,7 @@ const Navbar = function () {
             </Link>
 
             <Link className='navbar__item' to='/settings'>
-               <span>Tanvir</span>
+               <span>{userNameF}</span>
                <IconLogout />
             </Link>
          </nav>

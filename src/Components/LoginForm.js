@@ -1,13 +1,20 @@
 import React from 'react'
 import '../sass/login.scss';
 
-import { users } from '../userData'
-
 import LoginSvg from '../icons/LoginSvg';
-import { useUserContext } from './UserContext';
+import { ArrowIconLogo } from '../icons/Icons';
+import ThemeToggler from './ThemeToggler';
+
+import { useUserContext } from './Contexts/UserContext';
+import { useTheme } from './Contexts/ThemeContext';
+
+import { users } from '../userData'
+import { useProducts } from './Contexts/ProductsContext';
 
 const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
    const [, setUser] = useUserContext();
+   const [, setProducts] = useProducts();
+   const [theme, setTheme] = useTheme();
 
    const handleSubmit = (e) => {
       e.preventDefault();
@@ -19,7 +26,11 @@ const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
       }
 
       const callAll = (user) => {
+         const [p1, p2] = users.filter(u => u.owner !== user.owner).map(u => u.products);
+         const products = [...p1, ...p2];
+
          setUser(user);
+         setProducts(products);
          setIsLoggedIn('loggedIn');
       }
 
@@ -28,7 +39,7 @@ const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
       } else {
          const user = users.find(user => user.owner === userInput.name);
 
-         if (user.email === userInput.email) {
+         if (user?.email === userInput.email) {
             callAll(user);
          } else {
             setIsLoggedIn('invalidInput');
@@ -39,6 +50,11 @@ const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
    return (
       <div className='form-container'>
          <div className='login'>
+            <div className='login__logo'>
+               <ArrowIconLogo fill={theme} />
+               forex<span style={{ color: theme }}>Change</span>
+            </div>
+
             <h2 className='login__title'>Login<br />& exchange your goods with others</h2>
             <LoginSvg />
 
@@ -68,7 +84,7 @@ const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
                   />
                </div>
                <div className='login__submission'>
-                  <button className='login__submit'>Log In</button>
+                  <button className='login__submit' style={{ backgroundColor: theme }}>Log In</button>
                   {
                      isLoggedIn === 'notFilled'
                         ? <h4 className='login__error'>Empty Username or Email</h4>
@@ -78,6 +94,8 @@ const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
                   }
                </div>
             </form>
+
+            <ThemeToggler setTheme={setTheme} />
          </div>
       </div>
    )

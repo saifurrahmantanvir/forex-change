@@ -1,26 +1,21 @@
 import React from 'react'
-import '../sass/uploads.scss'
+import '../../sass/uploads.scss'
 
-import Modal from './Modal';
-import ProductCard from './ProductCard';
+import UploadModal from '../UploadModal';
+import ProductCard from '../ProductCard';
 
-import { useTheme } from './ThemeContext'
-import { useUserContext } from './UserContext';
+import { useTheme } from '../Contexts/ThemeContext'
+import { useUserContext } from '../Contexts/UserContext';
+import { useUploadedProducts } from '../Contexts/UploadedProductsContext'
 
-import UploadSvg from '../icons/UploadSvg'
-import { IconUpload } from '../icons/Icons';
+import UploadSvg from '../../icons/UploadSvg'
+import { IconUpload } from '../../icons/Icons';
 
 const Uploads = function () {
    const [user] = useUserContext();
    const [theme] = useTheme();
    const [openModal, setOpenModal] = React.useState(false);
-   const [uploadedProducts, setUploadedProducts] = React.useState(() => {
-      return JSON.parse(window.localStorage.getItem('products')) || user.uploads;
-   });
-
-   if (uploadedProducts.length) {
-      window.localStorage.setItem('products', JSON.stringify(uploadedProducts));
-   }
+   const [uploadedProducts, setUploadedProducts] = useUploadedProducts();
 
    const deleteUpload = (id) => {
       const remainingProducts = uploadedProducts.filter(p => p.productId !== id);
@@ -34,7 +29,7 @@ const Uploads = function () {
       <React.Fragment>
          <div className='upload'>
             {
-               uploadedProducts.length
+               uploadedProducts?.length
                   ? uploadedProducts.map(p => (
                      <ProductCard key={p.productId} product={p}
                         markable={false}
@@ -51,7 +46,6 @@ const Uploads = function () {
                   )
             }
          </div>
-
          <div className='upload__product'>
             <button
                className='upload__button'
@@ -62,7 +56,7 @@ const Uploads = function () {
                <IconUpload />
             </button>
             {
-               openModal ? <Modal toggleModal={toggleModal} user={user}
+               openModal ? <UploadModal toggleModal={toggleModal} user={user}
                   setUploadedProducts={setUploadedProducts}
                   uploadedProducts={uploadedProducts} />
                   : null

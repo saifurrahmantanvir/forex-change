@@ -1,0 +1,19 @@
+.pagination {
+   display: flex;
+   justify-content: center;
+
+   &__button {
+         margin: 20px;
+         border: none;
+         border-radius: 0.8rem;
+         padding: 0.8rem 1.5rem;
+         color: #fff;
+         cursor: pointer;
+         transition: transform 0.2s, box-shadow 0.2s;
+   
+         &:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0.8rem 1rem rgba(#000, 0.15);
+         }
+   }
+}

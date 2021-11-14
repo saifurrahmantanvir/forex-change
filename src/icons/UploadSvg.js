@@ -1,4 +1,4 @@
-import { useTheme } from "../Components/ThemeContext";
+import { useTheme } from "../Components/Contexts/ThemeContext";
 
 const UploadSvg = function () {
    const [theme] = useTheme();

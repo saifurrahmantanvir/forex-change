@@ -1,7 +1,8 @@
 import React from 'react';
 import './sass/sidebar.scss';
+
 import { Link } from 'react-router-dom';
-import { useTheme } from './Components/ThemeContext';
+import { useTheme } from './Components/Contexts/ThemeContext';
 
 const Sidebar = function ({ location, history }) {
    const [theme] = useTheme();
@@ -54,6 +55,8 @@ const Sidebar = function ({ location, history }) {
                <Link to='/settings' className='nav__link'>Settings</Link>
             </li>
          </ul>
+
+         <p className="copyright">&copy; Copyright forexChange 2021 by <a href='https://www.linkedin.com/in/tanvir-rahman-113406202' className='copyright__link'>Tanvir rahman.</a></p>
       </div>
    )
 }

@@ -1,0 +1,20 @@
+.popup {
+   display: flex;
+   justify-content: flex-end;
+   position: relative;
+   margin-right: 2rem;
+   
+   &__text {
+      background-color: #fff;
+      border-radius: 3px;
+      padding: 3rem;
+   }
+
+   &__close-button {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      border: none;
+      background: none;
+   }
+}

@@ -1,0 +1,44 @@
+.e-backdrop {
+   position: fixed;
+   top: 0;
+   left: 0;
+   height: 100%;
+   width: 100%;
+   background-color: rgba(#000, 0.85);
+   z-index: 1;
+
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.e-modal {
+   background-color: var(--color-grey-light);
+   border-radius: 3px;
+   padding: 7rem;
+   padding-top: 4rem;
+
+   position: relative;
+
+   &__heading {
+      margin-bottom: 2rem;
+      text-align: center;
+   }
+
+   &__products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(min-content, 18.5rem));
+      grid-gap: 2rem;
+      justify-content: center;
+      
+      max-width: 100rem;
+   }
+
+   &__close-button {
+      position: absolute;
+      top: 2.5rem;
+      right: 2.5rem;
+      border: none;
+      background: none;
+   }
+}

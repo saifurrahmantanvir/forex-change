@@ -24,9 +24,6 @@
       width: 100%;
    }
 
-   &__description {
-      grid-column: 2 / 3;
-   }
 
    &__used {
       grid-column: 2 / 3;
@@ -38,6 +35,7 @@
       grid-column: 2 / 3;
    }
 
+   &__delete,
    &__request {
       grid-column: 3 / 4;
       grid-row: 2 / 4;
@@ -55,7 +53,11 @@
       }
    }
 
-   &__delete,
+   &__delete {
+      font-size: 1.5rem;
+      padding: 1.2rem;
+   }
+
    &__bookmark {
       border: none;
       height: 4rem;

@@ -1,13 +1,15 @@
 import React from 'react'
-import { useTheme } from './ThemeContext'
+import '../sass/pagination.scss'
+
+import { useTheme } from './Contexts/ThemeContext'
 
 const Pagination = function ({ goToPrevItems, goToNextItems, totalPages, page }) {
    const [theme] = useTheme();
 
-   if (page === 1) {
+   if (page === 1 && totalPages !== 1) {
       return (
          <div className='pagination'>
-            <button className='pagination__right'
+            <button className='pagination__button'
                style={{ backgroundColor: theme }}
                onClick={goToNextItems}
             >
@@ -17,10 +19,14 @@ const Pagination = function ({ goToPrevItems, goToNextItems, totalPages, page })
       )
    }
 
+   if (totalPages === 1) {
+      return null
+   }
+
    if (page === totalPages) {
       return (
          <div className='pagination'>
-            <button className='pagination__left'
+            <button className='pagination__button'
                style={{ backgroundColor: theme }}
                onClick={goToPrevItems}
             >
@@ -32,14 +38,14 @@ const Pagination = function ({ goToPrevItems, goToNextItems, totalPages, page })
 
    return (
       <div className='pagination'>
-         <button className='pagination__left'
+         <button className='pagination__button'
             style={{ backgroundColor: theme }}
             onClick={goToPrevItems}
          >
             &larr; page {page - 1}
          </button>
 
-         <button className='pagination__right'
+         <button className='pagination__button'
             style={{ backgroundColor: theme }}
             onClick={goToNextItems}
          >

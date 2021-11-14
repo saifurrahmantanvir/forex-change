@@ -1,5 +1,5 @@
-.backdrop {
-   position: absolute;
+.u-backdrop {
+   position: fixed;
    top: 0;
    left: 0;
    height: 100%;
@@ -11,7 +11,7 @@
    justify-content: center;
 }
 
-.modal {
+.u-modal {
    display: grid;
    grid-template-columns: repeat(2, 1fr);
    grid-template-rows: repeat(2, max-content);

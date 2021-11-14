@@ -1,6 +1,9 @@
 .sidebar {
    background-color: var(--color-sidebar);
    min-height: calc(100vh - 6.2rem);
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 }
 
 .nav {
@@ -25,9 +28,24 @@
       transition: background-color 0.2s;
    }
 
-   // &__item--active,
    &__link:hover,
    &__link:active {
       background-color: rgba(#fff, 0.1);
+   }
+}
+
+.copyright {
+   font-size: 1.2rem;
+   padding: 2rem;
+   text-align: center;
+   color: #bbb;
+
+   &__link {
+      text-decoration: none;
+      color: #fff;
+   }
+
+   &__link:hover {
+      color: #bbb;
    }
 }

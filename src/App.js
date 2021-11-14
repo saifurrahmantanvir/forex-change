@@ -7,10 +7,11 @@ import MainContent from './MainContent';
 import Sidebar from './Sidebar';
 import LoginForm from './Components/LoginForm';
 
-import { ThemeContextProvider } from './Components/ThemeContext';
-import { UserContextProvider } from './Components/UserContext';
+import { ThemeContextProvider } from './Components/Contexts/ThemeContext';
+import { UserContextProvider } from './Components/Contexts/UserContext';
+import { ProductsContextProvider } from './Components/Contexts/ProductsContext';
 
-const AppWithUser = function () {
+const AppWithContexts = function () {
    const [isLoggedIn, setIsLoggedIn] = React.useState('notLoggedIn');
 
    if (isLoggedIn !== 'loggedIn') {
@@ -28,11 +29,9 @@ const AppWithUser = function () {
             <Router>
                <Route render={(location, history) => (
                   <React.Fragment>
-                     <ThemeContextProvider>
-                        <Navbar />
-                        <Sidebar location={location} history={history} />
-                        <MainContent />
-                     </ThemeContextProvider>
+                     <Navbar />
+                     <Sidebar location={location} history={history} />
+                     <MainContent />
                   </React.Fragment>
                )}
                />
@@ -44,9 +43,15 @@ const AppWithUser = function () {
 
 const App = function () {
    return (
-      <UserContextProvider>
-         <AppWithUser />
-      </UserContextProvider>
+      <ThemeContextProvider>
+         <UserContextProvider>
+
+            <ProductsContextProvider>
+               <AppWithContexts />
+            </ProductsContextProvider>
+
+         </UserContextProvider>
+      </ThemeContextProvider>
    )
 }
 

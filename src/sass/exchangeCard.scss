@@ -1,0 +1,49 @@
+.e-card {
+   display: grid;
+   grid-template-columns: 1.5rem repeat(2, minmax(min-content, 8rem)) 1.5rem;
+   grid-template-rows: 15rem repeat(2, max-content) 0.8rem;
+   grid-row-gap: 0.5rem;
+
+   background-color: var(--color-grey-light);
+   border-radius: 1rem;
+   overflow: hidden;
+   box-shadow: 3.3px 3.3px 5.3px rgba(0, 0, 0, 0.028),
+               11.2px 11.2px 17.9px rgba(0, 0, 0, 0.042),
+               50px 50px 80px rgba(0, 0, 0, 0.07);
+
+   position: relative;
+
+   &__img {
+      grid-column: 1 / -1;
+      height: 100%;
+      width: 100%;
+   }
+
+   &__used {
+      grid-column: 2 / 4;
+      font-size: 1.4rem;
+      font-weight: 400;
+   }
+
+   &__name {
+      grid-column: 2 / 4;
+   }
+
+   &__exchange {
+      display: flex;
+      position: absolute;
+      top: 0.5rem;
+      right: 0.5rem;
+
+      border: none;
+      border-radius: 50%;
+      padding: 1rem;
+      cursor: pointer;
+      box-shadow: 0 0.8rem 1rem rgba(#000, 0.15);
+   }
+
+   &__icon {
+      height: 1.75rem;
+      width: 1.75rem;
+   }
+}

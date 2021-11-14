@@ -1,7 +1,7 @@
 import React from 'react'
-import '../sass/request.scss'
+import '../../sass/requests.scss'
 
-import RequestSvg from '../icons/RequestSvg'
+import RequestSvg from '../../icons/RequestSvg'
 
 const Requests = function () {
    return (

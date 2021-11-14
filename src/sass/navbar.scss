@@ -44,33 +44,33 @@
       align-items: center;
       justify-content: center;
    }
-}
 
-.logo {
-   display: inline-block;
-   position: relative;
-   font-size: 2rem;
-   font-weight: 500;
-   margin-left: 3rem;
-   color: #fff;
-
-   &::before,
-   &::after {
+   &__logo {
       display: inline-block;
-      content: "";
-      background-color: currentColor;
-      position: absolute;
-      right: 0;
-      height: 1px;
-   }
+      position: relative;
+      font-size: 2rem;
+      font-weight: 500;
+      margin-left: 3rem;
+      color: #fff;
    
-   &::before {
-      width: 6rem;
-      top: 0;
-   }
-   
-   &::after {
-      width: 3rem;
-      top: 0.5rem;
+      &::before,
+      &::after {
+         display: inline-block;
+         content: "";
+         background-color: currentColor;
+         position: absolute;
+         right: 0;
+         height: 1px;
+      }
+      
+      &::before {
+         width: 6rem;
+         top: 0;
+      }
+      
+      &::after {
+         width: 3rem;
+         top: 0.5rem;
+      }
    }
 }

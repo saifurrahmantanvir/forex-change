@@ -1,6 +1,5 @@
 import React from 'react'
-
-import { useUserContext } from './UserContext';
+import { useProducts } from './ProductsContext';
 
 const BookmarksContext = React.createContext();
 
@@ -25,9 +24,9 @@ const reducer = function (products, action) {
 }
 
 export const BookmarksContextProvider = function ({ children }) {
-   const [user] = useUserContext();
+   const [products] = useProducts();
 
-   const initialItems = user.products.map((p) =>
+   const initialItems = products.map((p) =>
       JSON.parse(window.localStorage.getItem(`${p.productId}`))
    ).filter((p) => p !== null) || [];
 
