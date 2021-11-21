@@ -2,7 +2,7 @@ import React from 'react'
 
 const usePaginationHook = function (products) {
    const [page, setPage] = React.useState(1);
-   const itemsPerPage = 3;
+   const itemsPerPage = 8;
 
    const startIndex = (page - 1) * itemsPerPage;
    const endIndex = page * itemsPerPage;

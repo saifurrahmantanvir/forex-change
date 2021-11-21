@@ -7,10 +7,12 @@ import { useExchangeContext } from './Contexts/ExchangeContext';
 import { useUploadedProducts } from './Contexts/UploadedProductsContext';
 import { useProducts } from './Contexts/ProductsContext';
 import { useBookmarksContext } from './Contexts/BookmarksContext';
+import { useExchangeLog } from './Contexts/ExchangeLogContext';
 
 const ExchangeCard = function ({ product, toggleModal, togglePopup }) {
    const [theme] = useTheme();
    const [exchangeIDs, setExchangeIDs] = useExchangeContext();
+   const [, setExchangeHistory] = useExchangeLog();
    const [uploadedProducts, setUploadedProducts] = useUploadedProducts();
    const [products, setProducts] = useProducts();
    const [, setMarkedProducts] = useBookmarksContext();
@@ -19,11 +21,15 @@ const ExchangeCard = function ({ product, toggleModal, togglePopup }) {
       setExchangeIDs(pState => ({ ...pState, givenProductId: product.productId }));
 
       const remainingUploads = uploadedProducts.filter(p => p.productId !== product.productId);
-      window.localStorage.removeItem('products');
+      window.localStorage.removeItem('uploads');
       setUploadedProducts(remainingUploads);
 
       const takenProduct = products.find(p => p.productId === exchangeIDs.takenProductId);
-      if (window.localStorage.getItem(`${takenProduct.productId}`)) {
+
+      window.localStorage.setItem(`exchanged-${takenProduct.productId}`, JSON.stringify(takenProduct));
+      setExchangeHistory(prevProducts => [...prevProducts, takenProduct]);
+
+      if (window.localStorage.getItem(`marked-${takenProduct.productId}`)) {
          setMarkedProducts({ type: 'REMOVE', product: takenProduct, marked: false });
       }
 
@@ -35,19 +41,19 @@ const ExchangeCard = function ({ product, toggleModal, togglePopup }) {
    }
 
    return (
-      <div className="e-card">
-         <img src={product.productImage} alt='product 1' className='e-card__img' />
+      <div className="exchange-card">
+         <img src={product.productImage} alt='' className='exchange-card__img' />
 
-         <h3 className="e-card__name" style={{ color: theme }}>
+         <h3 className="exchange-card__name" style={{ color: theme }}>
             {product.productName}
          </h3>
-         <span className="e-card__used">Used - {product.used}</span>
+         <span className="exchange-card__used">Used - {product.used}</span>
 
          <button
-            className="e-card__exchange"
+            className="exchange-card__exchange"
             onClick={handleExchange}
          >
-            <img src={exchangeIcon} alt='' className='e-card__icon' />
+            <img src={exchangeIcon} alt='' className='exchange-card__icon' />
          </button>
       </div>
    )

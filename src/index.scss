@@ -11,8 +11,10 @@
   --color-error: #D0454C;
 }
 
-$bp-tab: 50em;  // 800px;
+$bp-desktop: 63.5em;  // 1015px;
+$bp-tab: 50em;        // 800px;
 $bp-mobile: 31.25em;  // 500px;
+$bp-small: 26.875em;  // 430px;
 
 *,
 *::before,
@@ -26,6 +28,9 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 
+  @media only screen and (max-width: 63.5em) {
+    font-size: 56.25%;
+  }
   @media only screen and (max-width: 31.25em) {
     font-size: 50%;
   }

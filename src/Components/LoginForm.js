@@ -14,6 +14,7 @@ import { useProducts } from './Contexts/ProductsContext';
 const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
    const [, setUser] = useUserContext();
    const [, setProducts] = useProducts();
+
    const [theme, setTheme] = useTheme();
 
    const handleSubmit = (e) => {

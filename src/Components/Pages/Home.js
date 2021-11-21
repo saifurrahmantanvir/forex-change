@@ -16,8 +16,12 @@ const Home = function () {
    const [openModal, setOpenModal] = React.useState(false);
    const [openPopup, setOpenPopup] = React.useState(false);
 
-   const initialProducts = products.map(p => {
-      return JSON.parse(window.localStorage.getItem(`${p.productId}`)) ||
+   const exchangeableProducts = products.filter(p =>
+      p.productId !== JSON.parse(window.localStorage.getItem(`exchanged-${p.productId}`))?.productId
+   );
+
+   const initialProducts = exchangeableProducts.map(p => {
+      return JSON.parse(window.localStorage.getItem(`marked-${p.productId}`)) ||
          { ...p, marked: false }
    });
    const { page, setPage, totalPages, itemsToShow } = usePaginationHook(initialProducts);

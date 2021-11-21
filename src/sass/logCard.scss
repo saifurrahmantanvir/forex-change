@@ -1,4 +1,4 @@
-.product {
+.log-card {
    display: grid;
    grid-template-columns: 1.25rem repeat(2, minmax(min-content, 10rem)) 1.25rem;
    grid-template-rows: 18rem minmax(4rem, min-content) 1rem;
@@ -12,7 +12,7 @@
    position: relative;
 
    @media only screen and (max-width: 26.875em) {
-      grid-template-columns: 1.25rem repeat(2, minmax(min-content, 8.5rem)) 1.25rem;
+      grid-template-columns: 1.25rem repeat(2, minmax(min-content, 8rem)) 1.25rem;
       grid-template-rows: 15rem minmax(4rem, min-content) 1rem;
    }
 
@@ -35,10 +35,6 @@
       line-height: 1.4;
    }
 
-   &:hover &__description {
-      display: none;
-   }
-
    &__used {
       font-size: 1.2rem;
       font-weight: 400;
@@ -46,35 +42,5 @@
 
    &__name {
       font-size: 1.4rem;
-   }
-
-   &__cta {
-      display: none;
-      grid-column: 2 / 4;
-      grid-row: 2 / 3;
-      justify-self: center;
-      border-radius: 0.8rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-
-      &:hover {
-         transform: translateY(-2px);
-         box-shadow: 0 0.8rem 1rem rgba(#000, 0.15);
-      }
-   }
-
-   &:hover &__cta {
-      display: inline-block;
-   }
-
-   &__bookmark {
-      border: none;
-      height: 3.5rem;
-      border-radius: 50%;
-      padding: 0.7rem;
-      position: absolute;
-      top: 0;
-      right: 2rem;
-      background-color: var(--color-grey-light);
-      box-shadow: 0 5px 8px rgba(#000, 0.1);
    }
 }

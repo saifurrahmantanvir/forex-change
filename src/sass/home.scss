@@ -1,7 +1,18 @@
 .home {
    display: grid;
-   grid-template-columns: repeat(auto-fit, minmax(28.8rem, max-content));  // 28.8rem -> 31rem(max-content)
-   grid-gap: 5rem;
+   grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));  // 20rem -> 22.5rem(max-content)
+   grid-gap: 4rem;
    justify-content: center;
-   padding: 5rem;
+   padding: 4rem;
+
+   @media only screen and (max-width: 31.25em) {
+      grid-gap: 3rem;
+      padding: 3rem;
+   }
+
+   @media only screen and (max-width: 26.875em) {
+      grid-template-columns: repeat(auto-fit, minmax(15rem, max-content));
+      grid-gap: 2.5rem;
+      padding: 2.5rem;
+   }
 }

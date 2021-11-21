@@ -1,4 +1,4 @@
-.e-card {
+.exchange-card {
    display: grid;
    grid-template-columns: 1.5rem repeat(2, minmax(min-content, 8rem)) 1.5rem;
    grid-template-rows: 15rem repeat(2, max-content) 0.8rem;
@@ -12,6 +12,11 @@
                50px 50px 80px rgba(0, 0, 0, 0.07);
 
    position: relative;
+
+   @media only screen and (max-width: 50em) {
+      grid-template-columns: 1.25rem repeat(2, minmax(min-content, 7rem)) 1.25rem;
+      grid-template-rows: 12rem repeat(2, max-content) 0.8rem;
+   }
 
    &__img {
       grid-column: 1 / -1;

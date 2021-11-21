@@ -7,11 +7,11 @@ export const UploadedProductsContextProvider = function ({ children }) {
    const [user] = useUserContext();
 
    const [uploadedProducts, setUploadedProducts] = React.useState(() => {
-      return JSON.parse(window.localStorage.getItem('products')) || user.uploads;
+      return JSON.parse(window.localStorage.getItem('uploads')) || user.uploads;
    });
 
    if (uploadedProducts?.length) {
-      window.localStorage.setItem('products', JSON.stringify(uploadedProducts));
+      window.localStorage.setItem('uploads', JSON.stringify(uploadedProducts));
    }
 
    return (

@@ -32,9 +32,9 @@ const Bookmarks = function () {
                         setExchangeIDs={setExchangeIDs}
                      />
                   )) : (
-                     <div className='bookmarks__recommendation'>
+                     <div className='bookmarks__fallback'>
                         <BookmarkSvg />
-                        <h2>No Bookmarks Yet. Bookmark Something For Later</h2>
+                        <h2>No bookmarks yet. Bookmark something for later</h2>
                      </div>
                   )
             }

@@ -31,7 +31,7 @@ const AppWithContexts = function () {
                   <React.Fragment>
                      <Navbar />
                      <Sidebar location={location} history={history} />
-                     <MainContent />
+                     <MainContent setIsLoggedIn={setIsLoggedIn} />
                   </React.Fragment>
                )}
                />

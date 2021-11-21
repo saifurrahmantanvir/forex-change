@@ -20,6 +20,15 @@
 
    position: relative;
 
+   @media only screen and (max-width: 50em) {
+      padding: 4rem;
+   }
+
+   @media only screen and (max-width: 31.25em) {
+      width: 100%;
+      min-height: 100%;
+   }
+
    &__heading {
       margin-bottom: 2rem;
       text-align: center;
@@ -32,6 +41,10 @@
       justify-content: center;
       
       max-width: 100rem;
+
+      @media only screen and (max-width: 50em) {
+         grid-template-columns: repeat(auto-fit, minmax(min-content, 16rem));
+      }
    }
 
    &__close-button {
@@ -40,5 +53,10 @@
       right: 2.5rem;
       border: none;
       background: none;
+
+      @media only screen and (max-width: 31.25em) {
+         top: 1.5rem;
+         right: 1.5rem;
+      }
    }
 }

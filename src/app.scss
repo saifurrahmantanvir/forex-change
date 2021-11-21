@@ -1,8 +1,15 @@
 .app {
    display: grid;
    grid-template-columns: minmax(min-content, 25rem) 1fr;
-
    border: 1px solid #fff;
+
+   @media only screen and (max-width: 63.5em) {
+      grid-template-columns: 1fr;
+   }
+
+   @media only screen and (max-width: 26.875em) {
+      border: none;
+   }
 }
 
 input,
@@ -10,7 +17,15 @@ button {
    font-family: inherit;
 }
 
+button {
+   border: none;
+   border-radius: 0.5rem;
+   padding: 0.8rem 2rem;
+   color: #fff;
+   cursor: pointer;
+}
+
 .main-content {
    min-height: calc(100vh - 6.2rem);
-   background-color: var(--color-grey-dark);
+   background-color: var(--color-grey-light);
 }

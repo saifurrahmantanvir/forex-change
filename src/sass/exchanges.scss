@@ -1,9 +1,9 @@
-.bookmarks {
+.exchange {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(20rem, max-content));
-   grid-gap: 5rem;
+   grid-gap: 4rem;
    justify-content: center;
-   padding: 5rem;
+   padding: 4rem;
 
    @media only screen and (max-width: 31.25em) {
       grid-gap: 3rem;
@@ -22,9 +22,27 @@
       justify-items: center;
       text-align: center;
    }
-   
+
+   &__resetter {
+      display: flex;
+      justify-content: center;
+   }
+
+   &__clear-button {
+      font-size: 1.6rem;
+      margin: 0 2rem 4rem 2rem;
+      border-radius: 0.8rem;
+      padding: 1.2rem 2.2rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+
+      &:hover {
+         transform: translateY(-2px);
+         box-shadow: 0 0.8rem 1rem rgba(#000, 0.15);
+      }
+   }
+
    &__svg {
       height: 30rem;
       width: auto;
-   }
+   }   
 }

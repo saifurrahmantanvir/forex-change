@@ -23,12 +23,29 @@
    background-color: #fff;
    position: relative;
 
+   @media only screen and (max-width: 50em) {
+      grid-template-columns: 1fr;
+      grid-row-gap: 1rem;
+      justify-items: center;
+      min-height: 100%;
+   }
+   
+   @media only screen and (max-width: 26.875em) {
+      width: 100%;
+      padding: 4rem;
+   }
+
    &__close-button {
       position: absolute;
       top: 2.5rem;
       right: 2.5rem;
       border: none;
       background: none;
+      
+      @media only screen and (max-width: 26.875em) {
+         top: 1.5rem;
+         right: 1.5rem;
+      }
    }
 
    &__heading {
@@ -43,6 +60,11 @@
       grid-template-rows: repeat(4, 1fr);
       grid-gap: 2rem;
       align-items: center;
+
+      @media only screen and (max-width: 50em) {
+         grid-row: 3 / 4;
+         grid-gap: 1rem;
+      }
    }
 
    &__label {
@@ -62,16 +84,17 @@
       &:focus {
          border: none;
       }
+
+      @media only screen and (max-width: 50em) {
+         padding-right: 5rem;
+      }
    }
 
    &__upload-button {
       display: flex;
       font-size: 1.7rem;
-      border: none;
       border-radius: 0.5rem;
       padding: 1.2rem 2.2rem;
-      color: #fff;
-      cursor: pointer;
       transition: transform 0.2s, box-shadow 0.2s;
 
       &:hover {
@@ -84,5 +107,10 @@
       align-self: center;
       height: 35rem;
       width: 35rem;
+
+      @media only screen and (max-width: 26.875em) {
+         height: 30rem;
+         width: 30rem;
+      }
    }
 }

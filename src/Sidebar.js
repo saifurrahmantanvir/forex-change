@@ -43,7 +43,7 @@ const Sidebar = function ({ location, history }) {
                <Link to='/' className='nav__link'>Home</Link>
             </li>
             <li className='nav__item'>
-               <Link to='/requests' className='nav__link'>Requests</Link>
+               <Link to='/exchanges' className='nav__link'>Exchanges</Link>
             </li>
             <li className='nav__item'>
                <Link to='/bookmarks' className='nav__link'>Bookmarks</Link>

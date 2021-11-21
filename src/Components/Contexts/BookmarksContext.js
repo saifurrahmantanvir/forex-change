@@ -8,14 +8,14 @@ const reducer = function (products, action) {
 
    switch (action.type) {
       case 'ADD':
-         window.localStorage.setItem(`${cProduct.productId}`, JSON.stringify(cProduct));
+         window.localStorage.setItem(`marked-${cProduct.productId}`, JSON.stringify(cProduct));
          return [...products, cProduct];
 
       case 'REMOVE':
          const remainingProducts = products.filter(
             (product) => product.productId !== cProduct.productId
          );
-         window.localStorage.removeItem(`${cProduct.productId}`);
+         window.localStorage.removeItem(`marked-${cProduct.productId}`);
          return [...remainingProducts];
 
       default:
@@ -27,7 +27,7 @@ export const BookmarksContextProvider = function ({ children }) {
    const [products] = useProducts();
 
    const initialItems = products.map((p) =>
-      JSON.parse(window.localStorage.getItem(`${p.productId}`))
+      JSON.parse(window.localStorage.getItem(`marked-${p.productId}`))
    ).filter((p) => p !== null) || [];
 
    const [markedItems, setMarkedItems] = React.useReducer(reducer, initialItems);

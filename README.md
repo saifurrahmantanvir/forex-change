@@ -8,6 +8,10 @@ After Day - 14 ---->
 
 In addition to previous commit, toggling theme from login-form & product exchanging is working smoothly. And various small fixes is complete.
 
+After Day - 21 ---->
+
+App is now fully responsive for all devices, product card was completely redesigned, exchanges page & logout functionality was added, routing related bug is still not fixed.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

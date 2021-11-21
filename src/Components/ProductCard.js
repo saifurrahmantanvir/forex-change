@@ -25,10 +25,10 @@ const ProductCard = function ({ product, markable = true, deleteUpload = null, t
 
    const productNameFormatter = (productName) => {
       const nameLength = productName.length;
-      if (nameLength <= 13) {
+      if (nameLength <= 20) {
          return productName;
       } else {
-         return productName.slice(0, 11).trim().padEnd(14, '...');
+         return productName.slice(0, 17).trim().padEnd(20, '...');
       }
    }
 
@@ -47,29 +47,31 @@ const ProductCard = function ({ product, markable = true, deleteUpload = null, t
                </button>
             ) : null
          }
-         <h3 className="product__name" style={{ color: theme }}>
-            {productNameFormatter(product.productName)}
-         </h3>
-         <span className="product__used">Used - {product.used}</span>
+         <div className='product__description'>
+            <h4 className="product__name" style={{ color: theme }}>
+               {productNameFormatter(product.productName)}
+            </h4>
+            <span className="product__used">Used - {product.used}</span>
+         </div>
          {
             markable ? (
                <button
-                  className="product__request"
+                  className="product__cta"
                   style={{ backgroundColor: theme }}
                   onClick={() => {
                      toggleModal();
                      setExchangeIDs(pState => ({ ...pState, takenProductId: product.productId }));
                   }}
                >
-                  Request Exchange
+                  Exchange
                </button>
             ) : (
                <button
-                  className="product__delete"
+                  className="product__cta"
                   style={{ backgroundColor: theme }}
                   onClick={() => deleteUpload(product.productId)}
                >
-                  Delete Product
+                  Delete
                </button>
             )
          }

@@ -18,12 +18,12 @@ const ExchangeModalWrapper = function ({ openModal, openPopup, toggleModal, togg
          {
             openPopup ? (
                <div className='popup'>
-                  <button className='popup__close-button' onClick={togglePopup}>
-                     <IconClose />
-                  </button>
                   <div className='popup__text'>
                      <h3>Your product exchange was successful</h3>
                   </div>
+                  <button className='popup__close-button' onClick={togglePopup}>
+                     <IconClose />
+                  </button>
                </div>
             ) : null
          }

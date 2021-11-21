@@ -19,7 +19,7 @@ const Uploads = function () {
 
    const deleteUpload = (id) => {
       const remainingProducts = uploadedProducts.filter(p => p.productId !== id);
-      window.localStorage.removeItem('products');
+      window.localStorage.removeItem('uploads');
       setUploadedProducts(remainingProducts);
    }
 
