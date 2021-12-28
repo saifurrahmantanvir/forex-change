@@ -1,5 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './app.scss';
 
 import Navbar from './Navbar';
@@ -13,8 +14,11 @@ import { ProductsContextProvider } from './Components/Contexts/ProductsContext';
 
 const AppWithContexts = function () {
    const [isLoggedIn, setIsLoggedIn] = React.useState('notLoggedIn');
+   const history = useHistory();
 
    if (isLoggedIn !== 'loggedIn') {
+      history.push('/');
+
       return (
          <LoginForm
             isLoggedIn={isLoggedIn}
@@ -26,16 +30,14 @@ const AppWithContexts = function () {
    if (isLoggedIn === 'loggedIn') {
       return (
          <div className='app'>
-            <Router>
-               <Route render={(location, history) => (
-                  <React.Fragment>
-                     <Navbar />
-                     <Sidebar location={location} history={history} />
-                     <MainContent setIsLoggedIn={setIsLoggedIn} />
-                  </React.Fragment>
-               )}
-               />
-            </Router>
+            <Route render={(location, history) => (
+               <React.Fragment>
+                  <Navbar />
+                  <Sidebar location={location} history={history} />
+                  <MainContent setIsLoggedIn={setIsLoggedIn} />
+               </React.Fragment>
+            )}
+            />
          </div>
       )
    }
@@ -47,7 +49,9 @@ const App = function () {
          <UserContextProvider>
 
             <ProductsContextProvider>
-               <AppWithContexts />
+               <Router>
+                  <AppWithContexts />
+               </Router>
             </ProductsContextProvider>
 
          </UserContextProvider>

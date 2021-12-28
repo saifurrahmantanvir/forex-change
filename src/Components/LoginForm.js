@@ -66,9 +66,9 @@ const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
                      className='login__input'
                      id='name'
                      placeholder="Tanvir rahman"
-                     value="Tanvir rahman"
+                     // value="Tanvir rahman"
                      // value="Asmaul hosna"
-                     // value="Jonas schmedtmann"
+                     value="Jonas schmedtmann"
                      readOnly
                   />
                </div>
@@ -78,9 +78,9 @@ const LoginForm = function ({ isLoggedIn, setIsLoggedIn }) {
                      className='login__input'
                      id='email'
                      placeholder="hellotanvir@gmail.com"
-                     value="hellotanvir@gmail.com"
+                     // value="hellotanvir@gmail.com"
                      // value="helloropi@gmail.com"
-                     // value="hellojonas@gmail.com"
+                     value="hellojonas@gmail.com"
                      readOnly
                   />
                </div>

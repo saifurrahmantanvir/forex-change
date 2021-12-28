@@ -56,7 +56,7 @@ const Sidebar = function ({ location, history }) {
             </li>
          </ul>
 
-         <p className="copyright">&copy; Copyright forexChange 2021 by <a href='https://www.linkedin.com/in/tanvir-rahman-113406202' className='copyright__link'>Tanvir rahman.</a></p>
+         <p className="copyright">&copy; Copyright forexChange 2021 by <a href='https://www.linkedin.com/in/saifur-rahman-113406202' target={"_blank"} className='copyright__link' rel="noreferrer">Tanvir rahman.</a></p>
       </div>
    )
 }

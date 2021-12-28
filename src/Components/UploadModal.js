@@ -6,7 +6,7 @@ import UploadModalSvg from '../icons/UploadModalSvg'
 
 import { useTheme } from './Contexts/ThemeContext'
 
-import iphoneImg from '../img/iphone-12.png'
+import iphoneImg from '../img/upload.png'
 
 import { users } from '../userData'
 
