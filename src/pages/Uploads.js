@@ -1,8 +1,8 @@
 import React from 'react'
 import '../sass/uploads.scss'
 
-import UploadModal from '../components/UploadModal';
-import ProductCard from '../components/ProductCard';
+import UploadModal from '../Components/UploadModal';
+import ProductCard from '../Components/ProductCard';
 
 import { useTheme } from '../contexts/ThemeContext'
 import { useUserContext } from '../contexts/UserContext';
