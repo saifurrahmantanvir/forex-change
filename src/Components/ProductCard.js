@@ -49,34 +49,37 @@ const ProductCard = function ({ product, markable = true, deleteUpload = null, t
                </button>
             ) : null
          }
-         <div className='product__description'>
-            <h4 className="product__name" style={{ color: theme }}>
-               {productNameFormatter(product.productName)}
-            </h4>
-            <span className="product__used">Used - {product.used}</span>
+
+         <div className='product__settings'>
+            <div className='product__description'>
+               <h4 className="product__name" style={{ color: theme }}>
+                  {productNameFormatter(product.productName)}
+               </h4>
+               <span className="product__used">Used - {product.used}</span>
+            </div>
+            {
+               markable ? (
+                  <button
+                     className="product__cta"
+                     style={{ backgroundColor: theme }}
+                     onClick={() => {
+                        toggleModal();
+                        setExchangeIDs(pState => ({ ...pState, takenProductId: product.productId }));
+                     }}
+                  >
+                     Exchange
+                  </button>
+               ) : (
+                  <button
+                     className="product__cta"
+                     style={{ backgroundColor: theme }}
+                     onClick={() => deleteUpload(product.productId)}
+                  >
+                     Delete
+                  </button>
+               )
+            }
          </div>
-         {
-            markable ? (
-               <button
-                  className="product__cta"
-                  style={{ backgroundColor: theme }}
-                  onClick={() => {
-                     toggleModal();
-                     setExchangeIDs(pState => ({ ...pState, takenProductId: product.productId }));
-                  }}
-               >
-                  Exchange
-               </button>
-            ) : (
-               <button
-                  className="product__cta"
-                  style={{ backgroundColor: theme }}
-                  onClick={() => deleteUpload(product.productId)}
-               >
-                  Delete
-               </button>
-            )
-         }
       </div>
    )
 }

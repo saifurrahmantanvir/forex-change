@@ -10,7 +10,6 @@
       50px 50px 80px rgba(0, 0, 0, 0.07);
 
    position: relative;
-   overflow: hidden;
 
    @media only screen and (max-width: 26.875em) {
       grid-template-columns: 1.25rem repeat(2, minmax(min-content, 8.5rem)) 1.25rem;
@@ -30,10 +29,11 @@
       width: 100%;
    }
 
-   &__description {
+   &__settings {
       justify-self: center;
       grid-column: 2 / 4;
       line-height: 1.4;
+      overflow: hidden;
    }
 
    &:hover &__description {
@@ -50,17 +50,20 @@
    }
 
    &__cta {
+      line-height: 1.4;
+      height: 100%;
       display: none;
       grid-column: 2 / 4;
       grid-row: 2 / 3;
       justify-self: center;
       border-radius: 0.8rem;
       animation: popup 0.3s ease-out;
-      transition: box-shadow 0.2s;
 
+      /*
       &:hover {
          box-shadow: 0 0.8rem 1rem rgba(#000, 0.15);
       }
+      */
    }
 
    &:hover &__cta {
@@ -83,9 +86,11 @@
 @keyframes popup {
    0% {
       transform: translateY(8rem);
+      opacity: 0;
    }
 
    100% {
       transform: translateY(0);
+      opacity: 1;
    }
 }
