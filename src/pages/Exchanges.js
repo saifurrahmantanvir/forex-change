@@ -1,7 +1,7 @@
 import React from 'react'
 import '../sass/exchanges.scss'
 
-import LogCard from '../components/LogCard'
+import LogCard from '../Components/LogCard'
 import ExchangeSvg from '../icons/ExchangeSvg';
 
 import { useExchangeLog } from '../contexts/ExchangeLogContext'

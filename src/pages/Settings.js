@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import '../sass/settings.scss'
 
 import { useTheme } from '../contexts/ThemeContext'
-import ThemeToggler from '../components/ThemeToggler';
+import ThemeToggler from '../Components/ThemeToggler';
 
 const Settings = function ({ setIsLoggedIn }) {
    const [theme] = useTheme();

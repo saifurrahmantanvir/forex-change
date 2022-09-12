@@ -6,7 +6,7 @@ import './app.scss';
 import Navbar from './Navbar';
 import MainContent from './MainContent';
 import Sidebar from './Sidebar';
-import LoginForm from './components/LoginForm';
+import LoginForm from './Components/LoginForm';
 
 import { ThemeContextProvider } from './contexts/ThemeContext';
 import { UserContextProvider } from './contexts/UserContext';
