@@ -2,7 +2,7 @@ import React from 'react';
 import './sass/sidebar.scss';
 
 import { Link } from 'react-router-dom';
-import { useTheme } from './Components/Contexts/ThemeContext';
+import { useTheme } from './contexts/ThemeContext';
 
 const Sidebar = function ({ location, history }) {
    const [theme] = useTheme();
@@ -15,9 +15,17 @@ const Sidebar = function ({ location, history }) {
       }
    }
 
+   /*
    React.useEffect(() => {
       const activeNavItem = document.querySelector('.nav__item--active');
       activeNavItem.style.backgroundColor = theme;
+
+   }, [theme])
+   */
+
+   React.useEffect(() => {
+      const sidebar = document.querySelector('.sidebar')
+      sidebar.style.backgroundColor = theme;
 
    }, [theme])
 
@@ -33,14 +41,14 @@ const Sidebar = function ({ location, history }) {
       });
 
       clicked.classList.add('nav__item--active');
-      clicked.style.backgroundColor = theme;
+      /* clicked.style.backgroundColor = '#3f51b5'; */
    }
 
    return (
-      <div className='sidebar' onSelect={handleSelect}>
-         <ul className='nav' onClick={activeItem}>
+      <div className='sidebar' onSelect={handleSelect} onClick={activeItem}>
+         <ul className='nav'>
             <li className='nav__item nav__item--active'>
-               <Link to='/' className='nav__link'>Home</Link>
+               <Link to='/' className='nav__link'>Home Feed</Link>
             </li>
             <li className='nav__item'>
                <Link to='/exchanges' className='nav__link'>Exchanges</Link>
@@ -52,11 +60,11 @@ const Sidebar = function ({ location, history }) {
                <Link to='/upload' className='nav__link'>Uploads</Link>
             </li>
             <li className='nav__item'>
-               <Link to='/settings' className='nav__link'>Settings</Link>
+               <Link to='/settings' className='nav__link'>Preference</Link>
             </li>
          </ul>
 
-         <p className="copyright">&copy; Copyright forexChange 2021 by <a href='https://www.linkedin.com/in/saifur-rahman-113406202' target={"_blank"} className='copyright__link' rel="noreferrer">Tanvir rahman.</a></p>
+         <p className="copyright">&copy; Copyright forexChange 2021 by <a href='https://www.linkedin.com/in/saifurrahmantanvir' target={"_blank"} className='copyright__link' rel="noreferrer">Tanvir rahman.</a></p>
       </div>
    )
 }

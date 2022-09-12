@@ -1,13 +1,13 @@
 import React from 'react'
-import '../../sass/bookmarks.scss'
+import '../sass/bookmarks.scss'
 
-import ProductCard from '../ProductCard'
+import ProductCard from '../components/ProductCard'
 
-import { useBookmarksContext } from '../Contexts/BookmarksContext'
-import { useExchangeContext } from '../Contexts/ExchangeContext'
+import { useBookmarksContext } from '../contexts/BookmarksContext'
+import { useExchangeContext } from '../contexts/ExchangeContext'
 
-import BookmarkSvg from '../../icons/BookmarkSvg'
-import ExchangeModalWrapper from '../ExchangeModalWrapper'
+import BookmarkSvg from '../icons/BookmarkSvg'
+import ExchangeModalWrapper from '../components/ExchangeModalWrapper'
 
 const Bookmarks = function () {
    const [markedItems] = useBookmarksContext();

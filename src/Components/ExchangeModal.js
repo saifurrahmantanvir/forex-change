@@ -2,7 +2,7 @@ import React from "react";
 import '../sass/exchangeModal.scss'
 
 import { IconClose } from "../icons/Icons";
-import { useUploadedProducts } from "./Contexts/UploadedProductsContext";
+import { useUploadedProducts } from "../contexts/UploadedProductsContext";
 import ExchangeCard from "./ExchangeCard";
 import Pagination from "./Pagination";
 import { usePaginationHook } from "./usePaginationHook";

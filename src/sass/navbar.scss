@@ -1,14 +1,20 @@
 .navbar {
    grid-column: 1 / -1;
    background-color: var(--color-navbar);
-   min-height: 6rem;
+   min-height: 6.3rem;
 
    display: flex;
    justify-content: space-between;
    align-items: center;
-
    border-bottom: 1px solid #fff;
-   
+
+   border-top-right-radius: 5px;
+   border-top-left-radius: 5px;
+
+   @media only screen and (max-width: 31.25em) {
+      border-radius: 0;
+   }
+
    @media only screen and (max-width: 26.875em) {
       border: none;
    }
@@ -18,19 +24,19 @@
       display: flex;
 
       @media only screen and (max-width: 26.875em) {
-         // display: none;
+         /* display: none; */
 
       }
    }
-   
+
    &__item {
       text-decoration: none;
       color: #fff;
       padding: 0 2rem;
-   
+
       display: flex;
       align-items: center;
-   
+
       position: relative;
 
       &:hover {
@@ -41,13 +47,13 @@
          padding: 0 1rem;
       }
 
-      & > *:last-child{
+      &>*:last-child {
          @media only screen and (max-width: 26.875em) {
             display: none;
          }
       }
    }
-   
+
    &__notification {
       position: absolute;
       top: 0.8rem;
@@ -56,7 +62,7 @@
       height: 2rem;
       width: 2rem;
       border-radius: 50%;
-   
+
       display: flex;
       align-items: center;
       justify-content: center;
@@ -68,13 +74,16 @@
    }
 
    &__logo {
+      font-family: 'Sofia Pro', 'Mukta', sans-serif;
       display: inline-block;
       position: relative;
-      font-size: 2rem;
+      font-size: 1.8rem;
       font-weight: 500;
       margin-left: 3rem;
       color: #fff;
-   
+      letter-spacing: -0.5px;
+
+      /*
       &::before,
       &::after {
          display: inline-block;
@@ -94,5 +103,6 @@
          width: 3rem;
          top: 0.5rem;
       }
+      */
    }
 }

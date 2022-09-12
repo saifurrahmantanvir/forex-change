@@ -1,7 +1,7 @@
 import React from 'react'
 import '../sass/pagination.scss'
 
-import { useTheme } from './Contexts/ThemeContext'
+import { useTheme } from '../contexts/ThemeContext'
 
 const Pagination = function ({ goToPrevItems, goToNextItems, totalPages, page }) {
    const [theme] = useTheme();

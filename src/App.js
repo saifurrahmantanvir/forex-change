@@ -6,11 +6,11 @@ import './app.scss';
 import Navbar from './Navbar';
 import MainContent from './MainContent';
 import Sidebar from './Sidebar';
-import LoginForm from './Components/LoginForm';
+import LoginForm from './components/LoginForm';
 
-import { ThemeContextProvider } from './Components/Contexts/ThemeContext';
-import { UserContextProvider } from './Components/Contexts/UserContext';
-import { ProductsContextProvider } from './Components/Contexts/ProductsContext';
+import { ThemeContextProvider } from './contexts/ThemeContext';
+import { UserContextProvider } from './contexts/UserContext';
+import { ProductsContextProvider } from './contexts/ProductsContext';
 
 const AppWithContexts = function () {
    const [isLoggedIn, setIsLoggedIn] = React.useState('notLoggedIn');

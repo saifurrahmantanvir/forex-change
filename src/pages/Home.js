@@ -1,13 +1,13 @@
 import React from 'react'
-import '../../sass/home.scss'
+import '../sass/home.scss'
 
-import ProductCard from '../ProductCard'
-import Pagination from '../Pagination'
-import ExchangeModalWrapper from '../ExchangeModalWrapper'
+import ProductCard from '../components/ProductCard'
+import Pagination from '../components/Pagination'
+import ExchangeModalWrapper from '../components/ExchangeModalWrapper'
 
-import { useProducts } from '../Contexts/ProductsContext'
-import { useExchangeContext } from '../Contexts/ExchangeContext'
-import { usePaginationHook } from '../usePaginationHook'
+import { useProducts } from '../contexts/ProductsContext'
+import { useExchangeContext } from '../contexts/ExchangeContext'
+import { usePaginationHook } from '../components/usePaginationHook'
 
 const Home = function () {
    const [products] = useProducts();

@@ -1,13 +1,13 @@
 import React from 'react'
 import '../sass/exchangeCard.scss'
 
-import { useTheme } from './Contexts/ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 import exchangeIcon from '../icons/exchange.png'
-import { useExchangeContext } from './Contexts/ExchangeContext';
-import { useUploadedProducts } from './Contexts/UploadedProductsContext';
-import { useProducts } from './Contexts/ProductsContext';
-import { useBookmarksContext } from './Contexts/BookmarksContext';
-import { useExchangeLog } from './Contexts/ExchangeLogContext';
+import { useExchangeContext } from '../contexts/ExchangeContext';
+import { useUploadedProducts } from '../contexts/UploadedProductsContext';
+import { useProducts } from '../contexts/ProductsContext';
+import { useBookmarksContext } from '../contexts/BookmarksContext';
+import { useExchangeLog } from '../contexts/ExchangeLogContext';
 
 const ExchangeCard = function ({ product, toggleModal, togglePopup }) {
    const [theme] = useTheme();

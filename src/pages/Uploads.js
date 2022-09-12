@@ -1,15 +1,15 @@
 import React from 'react'
-import '../../sass/uploads.scss'
+import '../sass/uploads.scss'
 
-import UploadModal from '../UploadModal';
-import ProductCard from '../ProductCard';
+import UploadModal from '../components/UploadModal';
+import ProductCard from '../components/ProductCard';
 
-import { useTheme } from '../Contexts/ThemeContext'
-import { useUserContext } from '../Contexts/UserContext';
-import { useUploadedProducts } from '../Contexts/UploadedProductsContext'
+import { useTheme } from '../contexts/ThemeContext'
+import { useUserContext } from '../contexts/UserContext';
+import { useUploadedProducts } from '../contexts/UploadedProductsContext'
 
-import UploadSvg from '../../icons/UploadSvg'
-import { IconUpload } from '../../icons/Icons';
+import UploadSvg from '../icons/UploadSvg'
+import { IconUpload } from '../icons/Icons';
 
 const Uploads = function () {
    const [user] = useUserContext();
@@ -38,7 +38,7 @@ const Uploads = function () {
                   )) : (
                      <div className='upload__recommendation'>
                         <UploadSvg />
-                        <h2>No Product Uploaded</h2>
+                        <h2>No product uploaded</h2>
                         <p className='upload__description'>
                            Upload a product and get it exchanged or exchange with others
                         </p>

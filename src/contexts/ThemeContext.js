@@ -3,7 +3,8 @@ import React from 'react'
 const ThemeContext = React.createContext();
 
 export const ThemeContextProvider = function ({ children }) {
-   const [theme, setTheme] = React.useState('#276738');
+   /* const [theme, setTheme] = React.useState('#3f51b5'); */
+   const [theme, setTheme] = React.useState('#83776d');
 
    return (
       <ThemeContext.Provider value={[theme, setTheme]}>

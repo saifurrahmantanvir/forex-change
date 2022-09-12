@@ -3,10 +3,10 @@ import '../sass/productCard.scss'
 
 import { ProductIconBookmark, ProductIconBookmarkFill } from '../icons/Icons';
 
-import { useBookmarksContext } from './Contexts/BookmarksContext';
-import { useTheme } from './Contexts/ThemeContext';
+import { useBookmarksContext } from '../contexts/BookmarksContext';
+import { useTheme } from '../contexts/ThemeContext';
 
-import productImg from '../img/product.png';
+import productImg from '../img/img-5.jpeg';
 
 const ProductCard = function ({ product, markable = true, deleteUpload = null, toggleModal = null, setExchangeIDs = null }) {
    const [theme] = useTheme();
@@ -23,14 +23,16 @@ const ProductCard = function ({ product, markable = true, deleteUpload = null, t
       setMarked(false);
    }
 
+
    const productNameFormatter = (productName) => {
       const nameLength = productName.length;
-      if (nameLength <= 20) {
+      if (nameLength <= 25) {
          return productName;
       } else {
-         return productName.slice(0, 17).trim().padEnd(20, '...');
+         return productName.slice(0, 22).trim().padEnd(25, '...');
       }
    }
+
 
    return (
       <div className="product">

@@ -4,8 +4,8 @@ import './sass/navbar.scss';
 import { Link } from 'react-router-dom';
 
 import { IconBookmark, IconUpload, IconLogout, ArrowIconLogo } from './icons/Icons';
-import { useTheme } from './Components/Contexts/ThemeContext';
-import { useUserContext } from './Components/Contexts/UserContext';
+import { useTheme } from './contexts/ThemeContext';
+import { useUserContext } from './contexts/UserContext';
 
 const Navbar = function () {
    const [theme] = useTheme();
@@ -18,7 +18,7 @@ const Navbar = function () {
       <div className='navbar'>
          <div className='navbar__logo'>
             <ArrowIconLogo fill={theme} />
-            forex<span style={{ color: theme }}>Change</span>
+            forex<span style={{ color: theme, fontWeight: 'bold' }}>Change</span>
          </div>
 
          <nav className='navbar__list'>

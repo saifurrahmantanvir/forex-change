@@ -1,7 +1,7 @@
 import React from 'react'
 import '../sass/logCard.scss'
 
-import { useTheme } from './Contexts/ThemeContext';
+import { useTheme } from '../contexts/ThemeContext';
 
 const LogCard = function ({ product }) {
    const [theme] = useTheme();

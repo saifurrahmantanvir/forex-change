@@ -1,15 +1,16 @@
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
-import Home from './Components/Pages/Home'
-import Exchanges from './Components/Pages/Exchanges'
-import Settings from './Components/Pages/Settings'
-import Uploads from './Components/Pages/Uploads'
-import Bookmarks from './Components/Pages/Bookmarks'
+import Home from './pages/Home'
+import Exchanges from './pages/Exchanges'
+import Settings from './pages/Settings'
+import Uploads from './pages/Uploads'
+import Bookmarks from './pages/Bookmarks'
 
-import { BookmarksContextProvider } from './Components/Contexts/BookmarksContext';
-import { ExchangeContextProvider } from './Components/Contexts/ExchangeContext';
-import { UploadedProductsContextProvider } from './Components/Contexts/UploadedProductsContext';
-import { ExchangeLogContextProvider } from './Components/Contexts/ExchangeLogContext';
+import { BookmarksContextProvider } from './contexts/BookmarksContext';
+import { ExchangeContextProvider } from './contexts/ExchangeContext';
+import { UploadedProductsContextProvider } from './contexts/UploadedProductsContext';
+import { ExchangeLogContextProvider } from './contexts/ExchangeLogContext';
 
 const MainContent = function ({ setIsLoggedIn }) {
    return (

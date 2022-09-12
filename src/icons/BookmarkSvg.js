@@ -1,4 +1,4 @@
-import { useTheme } from "../Components/Contexts/ThemeContext"
+import { useTheme } from "../contexts/ThemeContext"
 
 const BookmarkSvg = function () {
    const [theme] = useTheme();

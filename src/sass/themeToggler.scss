@@ -23,11 +23,34 @@
       margin-left: 0.5rem;
       cursor: pointer;
 
-      &--active { padding: 1.5rem; }
-      &:focus { border: none; }
+      &--active {
+         padding: 1.5rem;
+      }
 
-      &--green { background-color: #276738; }
-      &--red { background-color: #ef233c; }
-      &--orange { background-color: #eb5e28; }
+      &:focus {
+         border: none;
+      }
+
+      &--purple {
+         background-color: #3f51b5;
+      }
+
+      &--brown {
+         background-color: #D1C7BE;
+      }
+
+      &--gray {
+         background-color: #4D678C;
+      }
+
+      &--red {
+         background-color: #ef233c;
+      }
+
+      /*
+      &--orange {
+         background-color: #eb5e28;
+      }
+      */
    }
 }

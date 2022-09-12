@@ -1,11 +1,11 @@
 import React from 'react'
-import '../../sass/exchanges.scss'
+import '../sass/exchanges.scss'
 
-import LogCard from '../LogCard'
-import ExchangeSvg from '../../icons/ExchangeSvg';
+import LogCard from '../components/LogCard'
+import ExchangeSvg from '../icons/ExchangeSvg';
 
-import { useExchangeLog } from '../Contexts/ExchangeLogContext'
-import { useTheme } from '../Contexts/ThemeContext';
+import { useExchangeLog } from '../contexts/ExchangeLogContext'
+import { useTheme } from '../contexts/ThemeContext';
 
 const Exchanges = function () {
    const [exchangeHistory, setExchangeHistory] = useExchangeLog();

@@ -4,9 +4,9 @@ import '../sass/uploadModal.scss'
 import { IconClose, IconUpload } from '../icons/Icons'
 import UploadModalSvg from '../icons/UploadModalSvg'
 
-import { useTheme } from './Contexts/ThemeContext'
+import { useTheme } from '../contexts/ThemeContext'
 
-import iphoneImg from '../img/upload.png'
+import Hoodie from '../img/img-8.jpeg'
 
 import { users } from '../userData'
 
@@ -36,7 +36,7 @@ const UploadModal = function ({ toggleModal, user, uploadedProducts, setUploaded
          productId: (userIndex + 1) * 1000 + (prevUploadsLength + 1),
          productName: productName.value,
          used: productUsed.value,
-         productImage: iphoneImg,
+         productImage: Hoodie,
          marked: false
       }
       setUploadedProducts([...prevUploads, product]);

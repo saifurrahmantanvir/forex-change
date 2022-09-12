@@ -1,20 +1,20 @@
 :root {
   --color-grey-dark: #ebebeb;
   --color-grey-light: #f8f8ff;
-  
+
   --color-text: #303030;
 
   --color-navbar: #0a0908;
   --color-sidebar: #252422;
 
-  --color-accent: #276738;
+  --color-accent: #3f51b5;
   --color-error: #D0454C;
 }
 
-$bp-desktop: 63.5em;  // 1015px;
-$bp-tab: 50em;        // 800px;
-$bp-mobile: 31.25em;  // 500px;
-$bp-small: 26.875em;  // 430px;
+$bp-desktop: 63.5em;
+$bp-tab: 50em;
+$bp-mobile: 31.25em;
+$bp-small: 26.875em;
 
 *,
 *::before,
@@ -31,14 +31,43 @@ html {
   @media only screen and (max-width: 63.5em) {
     font-size: 56.25%;
   }
+
   @media only screen and (max-width: 31.25em) {
     font-size: 50%;
   }
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
+h2 {
+  letter-spacing: -1px;
+}
+
 body {
-  font-family: 'Prompt', sans-serif;
-  font-weight: 300;
-  color: var(--color-text);
+  font-family: 'Sofia Pro', 'Mukta', sans-serif;
   font-size: 1.5rem;
+  /* font-family: 'Sofia Pro', sans-serif; */
+  /* font-weight: 300; */
+  color: var(--color-text);
+}
+
+.title {
+  font-family: 'Sofia Pro', 'Mukta', sans-serif;
+  align-self: center;
+  font-size: 2.5rem;
+
+  @media only screen and (max-width: 43.75em) {
+    grid-row: 1/2;
+    grid-column: 1/2;
+  }
+}
+
+.settings__theme {
+  justify-self: start;
+
+  @media only screen and (max-width: 43.75em) {
+    grid-column: 1/-1;
+  }
 }

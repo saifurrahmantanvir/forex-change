@@ -1,10 +1,15 @@
 .app {
    display: grid;
    grid-template-columns: minmax(min-content, 25rem) 1fr;
-   border: 1px solid #fff;
+   background-color: #ebebeb;
+   padding: 3rem;
 
    @media only screen and (max-width: 63.5em) {
       grid-template-columns: 1fr;
+   }
+
+   @media only screen and (max-width: 31.25em) {
+      padding: 0;
    }
 
    @media only screen and (max-width: 26.875em) {
@@ -26,6 +31,13 @@ button {
 }
 
 .main-content {
-   min-height: calc(100vh - 6.2rem);
    background-color: var(--color-grey-light);
+   min-height: calc(100vh - 6.2rem);
+   border-bottom-right-radius: 5px;
+   box-shadow: 2rem 8rem 8rem rgba(#3f51b5, 0.2);
+   position: relative;
+
+   @media only screen and (max-width: 31.25em) {
+      border-radius: 0;
+   }
 }
